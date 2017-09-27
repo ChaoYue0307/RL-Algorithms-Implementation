@@ -9,7 +9,7 @@ A = 0 # to store action
 for a in range(k):
 	Q[a] = 0
 	N[a] = 0
-	
+
 def bandit(A):
 
 	return reward(A)
@@ -22,7 +22,7 @@ while True:
 
 	R = bandit(A)
 	N[A] = N[A] + 1
-	Q[A] = Q[A] + 1/N[A] * (R - Q[A])
+	Q[A] = Q[A] + 1/N[A] * (R - Q[A]) # NewEstimate = OldEstimate + StepSize[Target - OldEstimate] ; [Target- OldEstimate] is an error in the estimate
 
 
 
